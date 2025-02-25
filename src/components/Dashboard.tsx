@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, DollarSign, LineChart, Clock, Calendar, CheckSquare } from 'lucide-react';
+import { Users, DollarSign, LineChart, Clock, Calendar, CheckSquare, BarChart } from 'lucide-react';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -45,18 +45,18 @@ const Dashboard = () => {
       color: 'bg-green-500',
     },
     {
-      title: 'Deals Won',
-      value: '89',
-      change: '+8%',
-      icon: LineChart,
-      color: 'bg-purple-500',
-    },
-    {
       title: 'Tasks Due',
       value: '12',
       change: '-3',
       icon: Clock,
       color: 'bg-orange-500',
+    },
+    {
+      title: 'Sales Performance',
+      value: '89%',
+      change: '+8%',
+      icon: BarChart,
+      color: 'bg-purple-500',
     },
   ];
 

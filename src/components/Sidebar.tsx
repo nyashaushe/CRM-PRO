@@ -1,17 +1,12 @@
 import React from 'react';
 import { DivideIcon as LucideIcon } from 'lucide-react';
+import { SidebarProps } from './types'; // Adjust the import based on your project structure
+import { LayoutDashboard } from 'lucide-react';
 
 interface MenuItem {
   icon: LucideIcon;
   label: string;
   path: string;
-}
-
-interface SidebarProps {
-  isOpen: boolean;
-  menuItems: MenuItem[];
-  onNavigate: (path: string) => void;
-  currentPage: string;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, menuItems, onNavigate, currentPage }) => {
@@ -23,12 +18,29 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, menuItems, onNavigate, curren
     >
       {/* Logo */}
       <div className="flex items-center justify-center h-16 border-b">
-        <h1 className="text-2xl font-bold text-indigo-600">CRM Pro</h1>
+        <h1 className="text-2xl font-bold text-indigo-600">Pamoja Pro</h1>
       </div>
 
       {/* Navigation */}
       <nav className="mt-8">
         <ul className="space-y-2 px-4">
+          {/* Existing Navigation Items */}
+          <li>
+            <button
+              onClick={() => onNavigate('dashboard')}
+              className={`w-full flex items-center px-4 py-3 rounded-lg transition-colors ${
+                currentPage === 'dashboard'
+                  ? 'bg-indigo-50 text-indigo-600'
+                  : 'text-gray-600 hover:bg-indigo-50 hover:text-indigo-600'
+              }`}
+            >
+              <LayoutDashboard className="w-5 h-5 mr-3" />
+              <span className="font-medium">Dashboard</span>
+            </button>
+          </li>
+          {/* Add other existing items here... */}
+
+          {/* New Menu Items */}
           {menuItems.map((item, index) => (
             <li key={index}>
               <button
