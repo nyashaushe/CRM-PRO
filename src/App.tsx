@@ -15,6 +15,7 @@ import Marketing from './components/Marketing';
 import PersonalGrowth from './components/PersonalGrowth';
 import AIWorkflows from './components/AIWorkflows';
 import ProjectManagement from './components/ProjectManagement';
+import logo from './assets/logo.png';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
